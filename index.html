@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>AR Video</title>
+  <title>Оживающий плакат</title>
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
   <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
   <style>
@@ -10,15 +10,18 @@
       margin: 0;
       overflow: hidden;
     }
+    a-marker {
+      opacity: 0; /* Скрываем рамку */
+    }
   </style>
 </head>
 <body>
-  <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: true;">
-    <!-- Маркер -->
-    <a-marker type="pattern" url="pattern-marker.patt">
+  <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+    <!-- Маркер (стандартный Hiro) -->
+    <a-marker type="pattern" url="assets/hiro.patt">
       <!-- Видео -->
       <a-video
-        src="video.mp4"
+        src="assets/video.mp4"
         width="1.6"
         height="0.9"
         position="0 0 0"
